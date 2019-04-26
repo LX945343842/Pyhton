@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>豆瓣电影TOP250</title>
+    <style>
+        .btn{
+            height: 21px;
+            line-height: 21px;
+            padding: 8px 12px;
+            background: #555555;
+            border-radius: 6px;
+            color: #fff;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 14px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<h1>豆瓣电影TOP250</h1>
+<div class="content">
+    {% for movie in m_info %}
+        <li><a href="/movie_info/detail/{{ movie.id }}.html">{{ movie.mName }}</a></li>
+    {% endfor %}
+
+
+</div>
+    {% if up %}
+        <a id="pre" class="btn" href="/movie_info/page/list_{{ up }}.html">上一页</a>
+    {% endif %}
+  {% if next %}
+      <a id="next" class="btn" href="/movie_info/page/list_{{ next }}.html">下一页</a>
+  {% endif %}
+</body>
+</html>
